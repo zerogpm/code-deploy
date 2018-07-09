@@ -1,5 +1,5 @@
 version 0.0
-os: linxu
+os: linux
 
 files:
   - source: laravel/index.html
