@@ -1,12 +1,16 @@
-version 0.0
+version: 0.0
 os: linux
-
 files:
   - source: laravel/index.html
-    destination: /var/www/html
-
+    destination: /var/www/html/
 hooks:
   BeforeInstall:
+    - location: scripts/web-stop.sh
+      timeout: 300
+      runas: root
+    - location: scripts/delete-old-index.sh
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: scripts/web-start.sh
       timeout: 300
