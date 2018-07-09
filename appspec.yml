@@ -1,16 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: laravel/index.html
-    destination: /var/www/html/
-permissions:
-  - object: /var/www/html
-    pattern: index.html
-    owner: www-data
-    group: www-data
-    mode: 644
-    type:
-      - file    
+  - source: .
+    destination: /var/www/html/laravel  
 hooks:
   BeforeInstall:
     - location: scripts/web-stop.sh
