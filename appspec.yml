@@ -5,12 +5,12 @@ files:
     destination: /var/www/html/
 permissions:
   - object: /var/www/html
-  pattern: index.html
-  owner: www-data
-  group: apache
-  mode: 644
-  type:
-    - file    
+    pattern: index.html
+    owner: www-data
+    group: www-data
+    mode: 644
+    type:
+      - file    
 hooks:
   BeforeInstall:
     - location: scripts/web-stop.sh
