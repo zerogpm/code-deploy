@@ -5,23 +5,8 @@ files:
   - source: laravel/index.html
     destination: /var/www/html
 
-permissions:
-  - object: /var/www/html
-    pattern: index.html
-    owner: apache
-    group: apache
-    group: 644
-    type:
-     - file
-
 hooks:
   BeforeInstall:
-    - location: scripts/web-stop.sh
-      timeout: 300
-      runas: root
-    - location: scripts/delete-old-index.sh
-      timeout: 300
-      runas: root
   AfterInstall:
     - location: scripts/web-start.sh
       timeout: 300
